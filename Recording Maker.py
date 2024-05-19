@@ -18,11 +18,11 @@ this program. If not, see <http://www.gnu.org/licenses/>.
 __author__ = "Jason Callen"
 __credits__ = ["Jason Callen"]
 __license__ = "GPLv3"
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 __maintainer__ = "Jason Callen"
 __email__ = "jason.callen@ascension.org"
 __status__ = "Production"
-__date__ = "2023/05/07"
+__date__ = "2024/05/19"
 __deprecated__ = False
 
 import subprocess, sys, os
@@ -30,36 +30,25 @@ import subprocess, sys, os
 try:
     from gtts import gTTS
 except ImportError:
-    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'gTTS'])
-    from gtts import gTTS
-except:
     print('gTTS not found. Please install with "pip install gTTS"')
     sys.exit(0)
 
 try:
     import av
 except ImportError:
-    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'av'])
-    import av
-except:
     print('PyAv not found. Please install with "pip install av"')
     sys.exit(0)
 
 try:
     from playsound import playsound
 except ImportError:
-    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'playsound==1.2.2'])
-except:
-    print('playsound not found. Please install with "pip install playsound==1.2.2" Som Windows environments have issues with versions later than 1.2.2')
+    print('playsound not found. Please install with "pip install playsound==1.2.2" Some Windows environments have issues with versions later than 1.2.2')
     sys.exit(0)
 
 try:
     from deep_translator import GoogleTranslator
 except ImportError:
-    subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-U deep-translator'])
-    from deep_translator import GoogleTranslator
-except:
-    print('deep-translator not found. Please install with "pip install -U deep-translator"')
+    print('deep-translator not found. Please install with "pip install deep-translator"')
     sys.exit(0)
 
 DIALECT = {
