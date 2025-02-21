@@ -25,31 +25,14 @@ __status__ = "Production"
 __date__ = "2024/05/19"
 __deprecated__ = False
 
-import subprocess, sys, os
+import subprocess
+import sys
+import os
+from gtts import gTTS
+import av
+import playsound # version 1.2.2
+from deep_translator import GoogleTranslator
 
-try:
-    from gtts import gTTS
-except ImportError:
-    print('gTTS not found. Please install with "pip install gTTS"')
-    sys.exit(0)
-
-try:
-    import av
-except ImportError:
-    print('PyAv not found. Please install with "pip install av"')
-    sys.exit(0)
-
-try:
-    from playsound import playsound
-except ImportError:
-    print('playsound not found. Please install with "pip install playsound==1.2.2" Some Windows environments have issues with versions later than 1.2.2')
-    sys.exit(0)
-
-try:
-    from deep_translator import GoogleTranslator
-except ImportError:
-    print('deep-translator not found. Please install with "pip install deep-translator"')
-    sys.exit(0)
 
 DIALECT = {
     'af': 'Afrikaans', 'id': 'Indonesian', 'ro': 'Romanian', 'zh': 'Chinese (Mandarin)',
